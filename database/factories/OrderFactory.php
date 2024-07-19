@@ -17,7 +17,10 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => factory(App\Models\User::class),
+            'ticket_id' => factory(App\Models\Ticket::class),
+            'quantity' => fake()->numberBetween(1, 5),
+            'total_price' => fake()->randomFloat(2, 50, 500),
         ];
     }
 }
