@@ -13,7 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+User::factory(10)->create();
+Ticket::factory(20)->create();
+Category::factory(5)->create();
+Event::factory(10)->create();
+Order::factory(15)->create();
+Organizer::factory(5)->create();
+Review::factory(20)->create();
+Venue::factory(5)->create();
 
         User::factory()->create([
             'name' => 'Test User',
