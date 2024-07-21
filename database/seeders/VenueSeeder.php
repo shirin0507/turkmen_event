@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Venue;
 
 class VenueSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class VenueSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+Venue::factory()->count(5)->create();
     }
 }
