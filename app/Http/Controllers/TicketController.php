@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use App\Models\Event;
-use http\Exception\UnexpectedValueException;
 use Illuminate\Http\Request;
 
 class TicketController extends Controller
@@ -34,8 +33,7 @@ class TicketController extends Controller
         ]);
 Ticket::create($request->all());
         return
-            redirect()->
-            route('tickets.index')->with('success', 'Ticket created successfully.');
+            redirect()->route('tickets.index')->with('success', 'Ticket created successfully.');
     }
 
     public function show(Ticket $ticket)
