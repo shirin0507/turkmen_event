@@ -26,7 +26,7 @@ class CategoryController extends Controller
         $request->validate([
             'name' => 'required|string|max:255'
         ]);
-Category::create($request->all());
+        Category::create($request->all());
         return
             redirect()->route('categories.index')->with('success', 'Category created successfully.');
     }
@@ -50,7 +50,7 @@ Category::create($request->all());
         $request->validate([
             'name' => 'required|string|max:255'
         ]);
-$category->update($request->all());
+        $category->update($request->all());
         return
             redirect()->route('categories.index')->with('success', 'Category updated successfully.');
     }

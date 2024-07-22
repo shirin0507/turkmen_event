@@ -21,7 +21,7 @@ class VenueController extends Controller
             view('venues.create');
     }
 
-    public function store(Request  $request)
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -29,7 +29,7 @@ class VenueController extends Controller
             'city' => 'required|string',
             'country' => 'required|string',
         ]);
-Venue::create($request->all());
+        Venue::create($request->all());
         return
             redirect()->
             route('venues.index')->with('success', 'Venue created successfully.');
@@ -57,7 +57,7 @@ Venue::create($request->all());
             'city' => 'required|string',
             'country' => 'required|string',
         ]);
-$venue->update($request->all());
+        $venue->update($request->all());
         return redirect()->route('venues.index')->with('success', 'Venue update successfully.');
     }
 

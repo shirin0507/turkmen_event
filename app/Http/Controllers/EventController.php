@@ -29,9 +29,9 @@ class EventController extends Controller
             view('events.create');
     }
 
-    public function  store(Request $request)
+    public function store(Request $request)
     {
-Event::create($request->all());
+        Event::create($request->all());
         return
             redirect()->route('events.index');
     }
@@ -47,7 +47,7 @@ Event::create($request->all());
     public function update(Request $request, $id)
     {
         $event = Event::findOrFail($id);
-$event->update($request->all());
+        $event->update($request->all());
         return
             redirect()->route('events.index');
     }

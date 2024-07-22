@@ -27,7 +27,7 @@ class OrganizerController extends Controller
             'name' => 'required|string|max:255',
             'contact_info' => 'nullable|string',
         ]);
-Organizer::create($request->all());
+        Organizer::create($request->all());
         return
             redirect()->route('organizers.index')->with('success', 'Organizer created successfully.');
     }
@@ -52,7 +52,7 @@ Organizer::create($request->all());
             'name' => 'required|string|max:255',
             'contact_info' => 'nullable|string',
         ]);
-$organizer->update($request->all());
+        $organizer->update($request->all());
         return
             redirect()->route('organizers.index')->with('success', 'Organizer updated successfully.');
     }

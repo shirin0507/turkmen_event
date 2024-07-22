@@ -31,7 +31,7 @@ class ReviewController extends Controller
             'rating' => 'required|integer|min:1|max:5',
             'comment' => 'nullable|string',
         ]);
-Review::create($request->all());
+        Review::create($request->all());
         return
             redirect()->route('reviews.index')->with('success', 'Review created successfully.');
     }
@@ -59,7 +59,7 @@ Review::create($request->all());
             'rating' => 'required|integer|min:1|max:5',
             'comment' => 'nullable|string',
         ]);
-$review->update($request->all());
+        $review->update($request->all());
         return
             redirect()->route('reviews.index')->with('success', 'Review updated successfully.');
     }

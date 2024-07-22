@@ -31,7 +31,7 @@ class TicketController extends Controller
             'price' => 'required|numeric',
             'quantity' => 'required|integer',
         ]);
-Ticket::create($request->all());
+        Ticket::create($request->all());
         return
             redirect()->route('tickets.index')->with('success', 'Ticket created successfully.');
     }
@@ -49,7 +49,7 @@ Ticket::create($request->all());
         $events = Event::all();
         return
             view('tickets.edit',
-            compact('ticket', 'events'));
+                compact('ticket', 'events'));
     }
 
     public function update(Request $request, Ticket $ticket)
@@ -58,8 +58,8 @@ Ticket::create($request->all());
             'event_id' => 'required|exists:events, id',
             'price' => 'required|numeric',
             'quantity' => 'required|integer',
-            ]);
-$ticket->update($request->all());
+        ]);
+        $ticket->update($request->all());
         return
             redirect()->route('tickets.index')->with('success', 'Ticket updated successfully.');
     }

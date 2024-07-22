@@ -29,7 +29,7 @@ class OrderController extends Controller
             'quantity' => 'required|integer',
             'total_amount' => 'required|numeric',
         ]);
-Order::create($request->all());
+        Order::create($request->all());
         return
             redirect()->route('orders.index')->with('success', 'Order created successfully.');
     }
@@ -56,7 +56,7 @@ Order::create($request->all());
             'quantity' => 'required|integer',
             'total_amount' => 'required|numeric',
         ]);
-$order->update($request->all());
+        $order->update($request->all());
         return
             redirect()->route('orders.index')->with('success', 'Order updated successfully.');
     }
