@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
+use App\Models\Event;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,8 +19,8 @@ class ReviewFactory extends Factory
     public function definition(): array
     {
         return [
-            'event_id' => factory(App\Models\Event::class),
-            'user_id' => factory(App\Models\User::class),
+            'event_id' => Event::inRandomOrder()->first()->id,
+            'user_id' => User::inRandomOrder()->first()->id,
             'review' => fake()->paragraph(),
             'rating' => fake()->numberBetween(1, 5),
         ];

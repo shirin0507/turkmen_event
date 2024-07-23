@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Event;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,7 +21,7 @@ class TicketFactory extends Factory
             'type' => fake()->randomElement(['General Admission', 'VIP', 'Early Bird']),
             'price' => fake()->randomFloat(2, 10, 200),
             'quantity' => fake()->numberBetween(50, 200),
-            'event_id' => factory(App\Models\Event::class),
+            'event_id' => Event::inRandomOrder()->first()->id,
         ];
     }
 }

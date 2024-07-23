@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
+use App\Models\Ticket;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,8 +19,8 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => factory(App\Models\User::class),
-            'ticket_id' => factory(App\Models\Ticket::class),
+            'user_id' => User::inRandomOrder()->first()->id,
+            'ticket_id' => Ticket::inRandomOrder()->first()->id,
             'quantity' => fake()->numberBetween(1, 5),
             'total_price' => fake()->randomFloat(2, 50, 500),
         ];
