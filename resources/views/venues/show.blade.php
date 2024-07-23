@@ -1,0 +1,10 @@
+@extends('layouts.app')
+@section('content')
+    <h1>{{$venue->name}}</h1>
+    <p>
+        <strong>Location:</strong>
+        {{$venue->address}},
+        {{$venue->city}},
+        {{$venue->country}}
+    </p>
+@endsection
