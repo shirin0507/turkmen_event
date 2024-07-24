@@ -11,7 +11,7 @@ class Order extends Model
 
     protected $fillable = [
         'user_id',
-        'ticket_id',
+        'event_id',
         'quantity',
         'total_price',
     ];
@@ -22,9 +22,9 @@ class Order extends Model
             $this->belongsTo(User::class);
     }
 
-    public function ticket()
+    public function event()
     {
         return
-            $this->belongsTo(Ticket::class);
+            $this->belongsTo(Event::class);
     }
 }

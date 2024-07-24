@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Ticket;
 
@@ -13,6 +12,17 @@ class TicketSeeder extends Seeder
      */
     public function run(): void
     {
-        Ticket::factory()->count(20)->create();
+        Ticket::create([
+            'event_id' => 1,
+            'user_id' => 1,
+            'price' => 100.00,
+            'status' => 'confirmed',
+        ]);
+        Ticket::create([
+            'event_id' => 2,
+            'user_id' => 2,
+            'price' => 150.00,
+            'status' => 'confirmed',
+        ]);
     }
 }

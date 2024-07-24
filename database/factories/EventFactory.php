@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
+use App\Models\Event;
 use App\Models\Organizer;
 use App\Models\Venue;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class EventFactory extends Factory
 {
+    protected $model = Event::class;
+
     /**
      * Define the model's default state.
      *
@@ -20,12 +22,11 @@ class EventFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(),
+            'name' => fake()->sentence(),
             'description' => fake()->paragraph(),
-            'start_time' => fake()->dateTime(),
-            'end_time' => fake()->dateTime(),
+            'date' => fake()->date(),
+            'location' => fake()->city(),
             'venue_id' => Venue::inRandomOrder()->first()->id,
-            'category_id' => Category::inRandomOrder()->first()->id,
             'organizer_id' => Organizer::inRandomOrder()->first()->id,
         ];
     }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Venue;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class VenueFactory extends Factory
 {
+    protected $model = Venue::class;
+
     /**
      * Define the model's default state.
      *
@@ -18,9 +21,8 @@ class VenueFactory extends Factory
     {
         return [
             'name' => fake()->company(),
-            'address' => fake()->address(),
-            'city' => fake()->city(),
-            'country' => fake()->country(),
+            'location' => fake()->address(),
+            'capacity' => fake()->numberBetween(100, 10000),
         ];
     }
 }

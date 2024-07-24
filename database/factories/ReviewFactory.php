@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Review;
 use App\Models\User;
 use App\Models\Event;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -11,6 +12,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ReviewFactory extends Factory
 {
+    protected $model = Review::class;
+
     /**
      * Define the model's default state.
      *
@@ -21,8 +24,8 @@ class ReviewFactory extends Factory
         return [
             'event_id' => Event::inRandomOrder()->first()->id,
             'user_id' => User::inRandomOrder()->first()->id,
-            'review' => fake()->paragraph(),
             'rating' => fake()->numberBetween(1, 5),
+            'comment' => fake()->paragraph(),
         ];
     }
 }

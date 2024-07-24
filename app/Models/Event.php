@@ -10,13 +10,12 @@ class Event extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
+        'name',
         'description',
-        'start_time',
-        'end_time',
-        'venue_id',
-        'category_id',
-        'organizer-id',
+        'date',
+        'location',
+        'organizer_id',
+        'venue_id'
     ];
 
     public function venue()
@@ -25,7 +24,7 @@ class Event extends Model
             $this->belongsTo(Venue::class);
     }
 
-    public function category()
+    public function categories()
     {
         return
             $this->belongsTo(Category::class);
@@ -47,5 +46,11 @@ class Event extends Model
     {
         return
             $this->belongsTo(Review::class);
+    }
+
+    public function orders()
+    {
+        return
+            $this->belongsTo(Order::class);
     }
 }

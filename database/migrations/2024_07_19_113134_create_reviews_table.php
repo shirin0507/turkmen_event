@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('event_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->text('review');
+            $table->text('comment');
             $table->integer('rating');
             $table->timestamps();
         });

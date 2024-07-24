@@ -10,9 +10,10 @@ class Ticket extends Model
     use HasFactory;
 
     protected $fillable = [
-        'type',
-        'price',
         'event_id',
+        'user_id',
+        'price',
+        'status'
     ];
 
     public function event()
@@ -21,9 +22,9 @@ class Ticket extends Model
             $this->belongsTo(Event::class);
     }
 
-    public function orders()
+    public function user()
     {
         return
-            $this->hasMany(Order::class);
+            $this->hasMany(User::class);
     }
 }

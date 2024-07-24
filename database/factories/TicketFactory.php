@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Ticket;
+use App\Models\User;
 use App\Models\Event;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -10,6 +12,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class TicketFactory extends Factory
 {
+    protected $model = Ticket::class;
+
     /**
      * Define the model's default state.
      *
@@ -18,10 +22,10 @@ class TicketFactory extends Factory
     public function definition(): array
     {
         return [
-            'type' => fake()->randomElement(['General Admission', 'VIP', 'Early Bird']),
-            'price' => fake()->randomFloat(2, 10, 200),
-            'quantity' => fake()->numberBetween(50, 200),
             'event_id' => Event::inRandomOrder()->first()->id,
+            'user_id' => User::inRandomOrder()->first()->id,
+            'price' => fake()->randomFloat(2, 20, 200),
+            'status' => 'confirmed',
         ];
     }
 }

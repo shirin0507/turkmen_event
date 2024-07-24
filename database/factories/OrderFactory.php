@@ -3,7 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\User;
-use App\Models\Ticket;
+use App\Models\Order;
+use App\Models\Event;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -11,6 +12,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class OrderFactory extends Factory
 {
+    protected $model = Order::class;
+
     /**
      * Define the model's default state.
      *
@@ -20,9 +23,9 @@ class OrderFactory extends Factory
     {
         return [
             'user_id' => User::inRandomOrder()->first()->id,
-            'ticket_id' => Ticket::inRandomOrder()->first()->id,
-            'quantity' => fake()->numberBetween(1, 5),
-            'total_price' => fake()->randomFloat(2, 50, 500),
+            'event_id' => Event::inRandomOrder()->first()->id,
+            'quantity' => fake()->numberBetween(1, 10),
+            'total_price' => fake()->randomFloat(2, 20, 200),
         ];
     }
 }

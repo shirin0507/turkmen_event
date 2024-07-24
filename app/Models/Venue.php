@@ -12,7 +12,7 @@ class Venue extends Model
     protected $fillable = [
         'name',
         'location',
-        'description',
+        'capacity',
     ];
 
     public function events()

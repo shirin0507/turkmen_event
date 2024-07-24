@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Venue;
 
@@ -13,6 +12,15 @@ class VenueSeeder extends Seeder
      */
     public function run(): void
     {
-        Venue::factory()->count(5)->create();
+        Venue::create([
+            'name' => 'Ashgabat Expo Center',
+            'location' => 'Ashgabat',
+            'capacity' => '5000',
+        ]);
+        Venue::create([
+            'name' => 'Turkmenbashi Convention Center',
+            'location' => 'Turkmenbashi',
+            'capacity' => '3000',
+        ]);
     }
 }

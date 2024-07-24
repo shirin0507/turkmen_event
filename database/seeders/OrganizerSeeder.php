@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Organizer;
 
@@ -13,6 +12,13 @@ class OrganizerSeeder extends Seeder
      */
     public function run(): void
     {
-        Organizer::factory()->count(5)->create();
+        Organizer::create([
+            'name' => 'Turkmenistan Cultural Committee',
+            'email' => 'contact@culturalcommittee.tm',
+        ]);
+        Organizer::create([
+            'name' => 'Tech Innovators Inc.',
+            'email' => 'info@techinnovators.tm',
+        ]);
     }
 }

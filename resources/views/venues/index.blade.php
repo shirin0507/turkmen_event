@@ -1,3 +1,4 @@
+@extends('layouts.app')
 @section('content')
     <h1>Venues</h1>
     <ul>

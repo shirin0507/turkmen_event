@@ -12,10 +12,10 @@ return new class extends Migration {
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
+            $table->string('status')->default('confirmed');
             $table->decimal('price', 8, 2);
-            $table->integer('quantity');
             $table->foreignId('event_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

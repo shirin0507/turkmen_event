@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Nette\Schema\ValidationException;
+use Illuminate\Validation\ValidationException;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -27,7 +27,8 @@ class AuthenticatedSessionController extends Controller
         if (!Auth::attempt(
             $request->only('email', 'password'),
             $request->boolean('remember'))) {
-            throw ValidationException::withMessages([
+            throw
+            ValidationException::withMessages([
                 'email' => __('auth.failed'),
             ]);
         }
