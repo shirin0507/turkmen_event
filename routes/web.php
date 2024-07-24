@@ -25,3 +25,17 @@ Route::resource('organizers', OrganizerController::class);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('guest')->group(function (){
+    Route::get('login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'create'])
+        ->name('login');
+    Route::post('login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'store']);
+    Route::get('register', [\App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])
+        ->name('register');
+    Route::post('register', [\App\Http\Controllers\Auth\RegisteredUserController::class, 'store']);
+});
+
+Route::middleware('auth')->group(function (){
+    Route::post('logout', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy'])
+        ->name('logout');
+});

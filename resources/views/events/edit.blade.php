@@ -1,28 +1,33 @@
 @extends('layouts.app')
 @section('content')
     <h1>Edit Event</h1>
-    <form action="{{route('events.update', ['event' => $event->id])}}" method="POST">
+    <form action="{{route('events.update', ['event' => $event->id])}}"
+          method="POST">
         @csrf
         @method('PUT')
         <div class="form-group">
             <label for="title">Title:</label>
-            <input type="text" id="title" name="title" class="form-control" value="{{$event->title}}" required>
+            <input type="text" id="title" name="title"
+                   class="form-control" value="{{$event->title}}" required>
         </div>
         <div class="form-group">
             <label for="description">Description:</label>
-            <textarea id="description" name="description" class="form-control" rows="4" required>{{$event->description}}"
+            <textarea id="description" name="description" class="form-control"
+                      rows="4" required>{{$event->description}}"
             </textarea>
         </div>
         <div class="form-group">
             <label for="start_time">Start Time:</label>
             <input type="datetime-local" id="start_time"
-                   name="start_time" class="form-control" value="{{date('Y-m-d\TH:i', strtotime($event->start_time))}}"
+                   name="start_time" class="form-control"
+                   value="{{date('Y-m-d\TH:i', strtotime($event->start_time))}}"
                    required>
         </div>
         <div class="form-group">
             <label for="end_time">End Time:</label>
             <input type="datetime-local" id="end_time"
-                   name="end_time" class="form-control" value="{{date('Y-m-d\TH:i', strtotime($event->end_time))}}"
+                   name="end_time" class="form-control"
+                   value="{{date('Y-m-d\TH:i', strtotime($event->end_time))}}"
                    required>
         </div>
         <div class="form-group">
