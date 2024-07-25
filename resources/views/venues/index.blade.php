@@ -8,7 +8,12 @@
 @foreach($venues as $venue)
     <div>
         <h2>{{$venue->name}}</h2>
-        <p>{{$venue->address}}</p>
+        <p>
+            <strong>Address:</strong>{{$venue->address}}
+        </p>
+        <p>
+            <strong>Country:</strong>{{$venue->country}}
+        </p>
         <p>
             <strong>Capacity:</strong>{{$venue->capacity}}
         </p>

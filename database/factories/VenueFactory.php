@@ -21,7 +21,9 @@ class VenueFactory extends Factory
     {
         return [
             'name' => fake()->company(),
-            'location' => fake()->address(),
+            'address' => fake()->address(),
+            'city' => fake()->city(),
+            'country' => fake()->country(),
             'capacity' => fake()->numberBetween(100, 10000),
         ];
     }

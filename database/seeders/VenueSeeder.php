@@ -14,12 +14,16 @@ class VenueSeeder extends Seeder
     {
         Venue::create([
             'name' => 'Ashgabat Expo Center',
-            'location' => 'Ashgabat',
+            'address' => 'Ashgabat',
+            'city' => 'Ashgabat',
+            'country' => 'Turkmenistan',
             'capacity' => '5000',
         ]);
         Venue::create([
             'name' => 'Turkmenbashi Convention Center',
-            'location' => 'Turkmenbashi',
+            'address' => 'Turkmenbashi',
+            'city' => '',
+            'country' => 'Turkmenistan',
             'capacity' => '3000',
         ]);
     }

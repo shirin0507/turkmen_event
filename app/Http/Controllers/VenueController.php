@@ -28,6 +28,7 @@ class VenueController extends Controller
             'address' => 'required|string',
             'city' => 'required|string',
             'country' => 'required|string',
+            'capacity' => 'required|integer',
         ]);
         Venue::create($request->all());
         return
@@ -56,6 +57,8 @@ class VenueController extends Controller
             'address' => 'required|string',
             'city' => 'required|string',
             'country' => 'required|string',
+            'capacity' => 'required|integer',
+
         ]);
         $venue->update($request->all());
         return redirect()->route('venues.index')->with('success', 'Venue update successfully.');

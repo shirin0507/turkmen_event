@@ -16,15 +16,15 @@
 <p>
     <strong>Venue:</strong>
     @if($event->venue)
-    {{$event->venue->name}}
+        {{$event->venue->name}}
     @else
-    N/A
+        N/A
     @endif
 </p>
 <p>
     <strong>Category:</strong>
     @if($event->category)
-    {{$event->category->name}}
+        {{$event->category->name}}
     @else
         N/A
     @endif
@@ -32,7 +32,7 @@
 <p>
     <strong>Organizer:</strong>
     @if($event->organizer)
-    {{$event->organizer->name}}
+        {{$event->organizer->name}}
     @else
         N/A
     @endif

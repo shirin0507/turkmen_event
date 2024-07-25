@@ -13,10 +13,16 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         Category::create([
-            'name' => 'Cultural',
+            'name' => 'Music',
+            'description' =>'Events related to music and concerts',
         ]);
         Category::create([
-            'name' => 'Technology',
+            'name' => 'Sports',
+            'description' =>'Sports events and competitions',
+        ]);
+        Category::create([
+            'name' => 'Arts',
+            'description' =>'Art exhibitions and cultural events',
         ]);
     }
 }

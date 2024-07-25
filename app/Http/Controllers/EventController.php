@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Event;
+use App\Models\Organizer;
+use App\Models\Venue;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -39,9 +42,12 @@ class EventController extends Controller
     public function edit($id)
     {
         $event = Event::findOrFail($id);
+        $venues = Venue::all();
+        $categories = Category::all();
+        $organizers = Organizer::all();
         return
             view('events.edit',
-                compact('event'));
+                compact('event', 'venues', 'categories', 'organizers'));
     }
 
     public function update(Request $request, $id)

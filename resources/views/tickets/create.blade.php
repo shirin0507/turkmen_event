@@ -7,6 +7,18 @@
 <h1>Create Ticket</h1>
 <form action="{{route('tickets.store')}}" method="POST">
     @csrf
+    <label for="price">Price:
+        <input type="number" name="price" required>
+    </label>
+
+    <label for="quantity">Quantity:
+        <input type="number" name="quantity" required>
+    </label>
+
+    <label for="status">Status:
+        <input type="text" name="status" required>
+    </label>
+
     <label>Event:
         <select name="event_id" required>
             @foreach($events as $event)
@@ -25,17 +37,6 @@
         </select>
     </label>
 
-    <label for="price">Price:
-        <input type="number" name="price" required>
-    </label>
-
-    <label for="quantity">Quantity:
-        <input type="number" name="quantity" required>
-    </label>
-
-    <label for="status">Status:
-        <input type="text" name="status" required>
-    </label>
     <button type="submit">Create</button>
 </form>
 </body>

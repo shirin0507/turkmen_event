@@ -47,9 +47,10 @@ class ReviewController extends Controller
     public function edit(Review $review)
     {
         $events = Event::all();
+        $users = Event::all();
         return
             view('reviews.edit',
-                compact('review', 'events'));
+                compact('review', 'events', 'users'));
     }
 
     public function update(Request $request, Review $review)

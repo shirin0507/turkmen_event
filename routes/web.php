@@ -12,6 +12,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\OrganizerController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
@@ -40,3 +41,5 @@ Route::middleware('auth')->group(function (){
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
 });
+
+Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
