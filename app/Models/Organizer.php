@@ -12,6 +12,7 @@ class Organizer extends Model
     protected $fillable = [
         'name',
         'email',
+        'phone',
     ];
 
     public function events()

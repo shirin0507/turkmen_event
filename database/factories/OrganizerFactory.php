@@ -22,6 +22,7 @@ class OrganizerFactory extends Factory
         return [
             'name' => fake()->company(),
             'email' => fake()->unique()->safeEmail(),
+            'phone' => fake()->phoneNumber(),
         ];
     }
 }

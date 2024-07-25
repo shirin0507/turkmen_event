@@ -25,6 +25,7 @@ class TicketFactory extends Factory
             'event_id' => Event::inRandomOrder()->first()->id,
             'user_id' => User::inRandomOrder()->first()->id,
             'price' => fake()->randomFloat(2, 20, 200),
+            'quantity' => fake()->numberBetween(1, 10),
             'status' => 'confirmed',
         ];
     }

@@ -1,10 +1,21 @@
-@extends('layouts.app')
-@section('content')
-    <h1>{{$venue->name}}</h1>
-    <p>
-        <strong>Location:</strong>
-        {{$venue->address}},
-        {{$venue->city}},
-        {{$venue->country}}
-    </p>
-@endsection
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{$venue->name}}</title>
+</head>
+<body>
+<h1>{{$venue->name}}</h1>
+<p>{{$venue->address}}</p>
+<p>
+    <strong>Capacity:</strong>{{$venue->capacity}}
+</p>
+<a href="{{route('venues.edit', $venue->id)}}">Edit</a>
+<form action="{{route('venues.destroy', $venue->id)}}" method="POST" style="display: inline;">
+    @csrf
+    @method('DELETE')
+    <button
+        type="submit" onclick="return confirm('Are you sure?')">Delete
+    </button>
+</form>
+</body>
+</html>

@@ -16,12 +16,14 @@ class TicketSeeder extends Seeder
             'event_id' => 1,
             'user_id' => 1,
             'price' => 100.00,
+            'quantity' => 1,
             'status' => 'confirmed',
         ]);
         Ticket::create([
             'event_id' => 2,
             'user_id' => 2,
             'price' => 150.00,
+            'quantity' => 1,
             'status' => 'confirmed',
         ]);
     }

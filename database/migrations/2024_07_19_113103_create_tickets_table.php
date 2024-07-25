@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->decimal('price', 8, 2);
             $table->foreignId('event_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }

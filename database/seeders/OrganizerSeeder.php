@@ -15,10 +15,12 @@ class OrganizerSeeder extends Seeder
         Organizer::create([
             'name' => 'Turkmenistan Cultural Committee',
             'email' => 'contact@culturalcommittee.tm',
+            'phone' => '+99312227643',
         ]);
         Organizer::create([
-            'name' => 'Tech Innovators Inc.',
-            'email' => 'info@techinnovators.tm',
+            'name' => 'Tech Innovators',
+            'email' => 'info@techinnovators.co.in',
+            'phone' => '(+91)99132254331',
         ]);
     }
 }

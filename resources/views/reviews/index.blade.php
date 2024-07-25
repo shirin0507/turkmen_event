@@ -1,11 +1,22 @@
-@extends('layouts.app')
-@section('content')
-    <h1>Reviews</h1>
-    <ul>
-        @foreach($reviews as $review)
-            <li>
-                {{$review->user->name}} - {{$ticket->review}} - Rating:{{$raview->rating}}
-            </li>
-        @endforeach
-    </ul>
-@endsection
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reviews</title>
+</head>
+<body>
+<h1>Reviews List</h1>
+@foreach($reviews as $review)
+    <div>
+        <h2>{{$review->user->name}}'s Review</h2>
+        <p>
+            <strong>Event:</strong>{{$review->event->name}}
+        </p>
+        <p>
+            <strong>Rating:</strong>{{$review->rating}}
+        </p>
+        <p>{{$review->comment}}</p>
+        <a href="{{route('reviews.show', $review->id)}}">View Details</a>
+    </div>
+@endforeach
+</body>
+</html>

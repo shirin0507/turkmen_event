@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create Ticket</title>
+    <title>Create Review</title>
 </head>
 <body>
-<h1>Create Ticket</h1>
-<form action="{{route('tickets.store')}}" method="POST">
+<h1>Create Review</h1>
+<form action="{{route('reviews.store')}}" method="POST">
     @csrf
     <label>Event:
         <select name="event_id" required>
@@ -25,17 +25,14 @@
         </select>
     </label>
 
-    <label for="price">Price:
-        <input type="number" name="price" required>
+    <label>Rating:
+        <input type="number" name="rating" min="1" max="5" required>
     </label>
 
-    <label for="quantity">Quantity:
-        <input type="number" name="quantity" required>
+    <label>Comment:
+        <textarea name="comment" required></textarea>
     </label>
 
-    <label for="status">Status:
-        <input type="text" name="status" required>
-    </label>
     <button type="submit">Create</button>
 </form>
 </body>
